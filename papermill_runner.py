@@ -147,7 +147,7 @@ if __name__ == "__main__":
     nb_dict_list = [
         zero_dict,
         one_dict,
-        # four_dict,
+        four_dict,
     ]
     nb_name_list = [zero_dict_nb_name, one_dict_nb_name, four_dict_nb_name]
     notebook_list = [
