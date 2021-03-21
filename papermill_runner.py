@@ -145,7 +145,7 @@ def run_notebooks(
 if __name__ == "__main__":
     PROJ_ROOT_DIR = os.getcwd()
     nb_dict_list = [
-        zero_dict,
+        # zero_dict,
         one_dict,
         # four_dict,
     ]
