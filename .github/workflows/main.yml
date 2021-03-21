@@ -14,4 +14,4 @@ jobs:
     - run: tox -e lint
     - run: tox -e ci
       env:
-        BASE_URL: ${{ secrets.BASE_URL }}
+        RAW_DATA_URL: ${{ secrets.RAW_DATA_URL }}
