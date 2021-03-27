@@ -13,8 +13,7 @@
 
 ## [Table of Contents](#table-of-contents)
 1. [About](#about)
-   * [Forecasting Sales](#forecasting-sales)
-   [General Sales Forecasting](#general-sales-forecasting)
+   * [General Sales Forecasting](#general-sales-forecasting)
    * [Current Use-Case](#current-use-case)
    * [Practical Considerations](#practical-considerations)
    * [Objective](#objective)
@@ -50,7 +49,7 @@ Data to be used to generate a forecast ends on July 31, 2015. The sales forecast
 The final version of the forecast can use this day's data (July 31, 2015) but it must be noted that the forecast needs to be deployed before the start of business hours on Aug 1, 2015. This is the case in order to allow store managers to review the forecast before opening for business on the morning of Aug 1, 2015.
 
 ### [Objective](#objective)
-Forecast store-wise sales for approximately 1,100 of the German-based stores in the Rossmann chain over the period of Aug 1, 2015 to Sep 17, 2015.
+Forecast store-wise sales for approximately 1,100 of the German-based stores in the Rossmann chain over the period of Aug 1, 2015 to Sep 17, 2015, with an overall (across all stores combined) [Root Mean Squared Percentage Error](https://link.springer.com/article/10.1007/s10342-014-0793-7) (RMSPE) of 10% or less.
 
 ## [Project Organization](#project-organization)
 
