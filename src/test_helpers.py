@@ -3,6 +3,7 @@
 
 
 import numpy as np
+import pandas as pd
 
 
 def test_train_test_target_var(df_train, df_test, y_var_name):
@@ -15,20 +16,51 @@ def test_dfgetxy(X, y, y_name):
     assert y.name == "Sales"
 
 
-def test_split_data(
+def test_split_data_non_ts(
     train_idx_end,
     val_idx_end,
     test_idx_end,
-    df_train,
     df_val,
     df_test,
     df_holdout,
 ):
+    """
+    Usage
+    -----
+    d = split_data(df_train_full, df_holdout)
+    train_index, val_index, test_index = d["indexes"]
+    df_train, df_val, df_test = d["splits"]
+    test_split_data_non_ts(
+        max(train_index),
+        max(val_index),
+        max(test_index),
+        df_val,
+        df_test,
+        df_holdout,
+    )
+    """
     # Check length of validation split
     assert val_idx_end - train_idx_end == len(df_holdout)
     # Check length of testing split
     assert test_idx_end - val_idx_end == len(df_holdout)
     assert len(df_val) == len(df_test)
+
+
+def test_split_data(
+    train_train_index,
+    train_val_index,
+    train_test_index,
+    n_holdout,
+):
+    assert len(train_val_index) == len(train_test_index) == n_holdout
+    # Check boundary between validation and testing splits
+    assert train_test_index.min().strftime("%Y-%m-%d") == (
+        train_val_index.max() + pd.DateOffset(days=1)
+    ).strftime("%Y-%m-%d")
+    # Check boundary between training and validation splits
+    assert train_val_index.min().strftime("%Y-%m-%d") == (
+        train_train_index.max() + pd.DateOffset(days=1)
+    ).strftime("%Y-%m-%d")
 
 
 def test_fillna(X_train, X_val, X_test, continuous_vars_missing_vals):
