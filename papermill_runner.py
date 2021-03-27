@@ -20,9 +20,7 @@ zero_dict_nb_name = "0_get_data.ipynb"
 one_dict_nb_name = "1_data_clean_feat_eng.ipynb"
 four_dict_nb_name = "4_xgboost_trials.ipynb"
 
-zero_dict = dict(
-    base_url=str(os.getenv("BASE_URL")), tar_filename_no_extension="rossmann"
-)
+zero_dict = dict(tar_filename_no_extension="rossmann")
 one_dict = dict(
     dataset_names=[
         "store",
